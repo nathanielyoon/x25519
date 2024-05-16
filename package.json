@@ -2,7 +2,10 @@
   "$schema": "https://json.schemastore.org/package.json",
   "name": "@nyoon/x25519",
   "version": "0.1.2",
-  "repository": "github:nathanielyoon/x25519",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathanielyoon/x25519.git"
+  },
   "type": "module",
   "main": "./dist/main.js",
   "types": "./dist/main.d.ts",
