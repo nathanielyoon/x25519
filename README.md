@@ -1,5 +1,9 @@
 # x25519
 
+```sh
+npm i @nyoon/x25519 # 499b mini+gzip
+```
+
 ```ts
 import { x25519 } from "@nyoon/x25519";
 

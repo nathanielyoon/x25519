@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "name": "@nyoon/x25519",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "repository": "github:nathanielyoon/x25519",
   "type": "module",
   "main": "./dist/main.js",
