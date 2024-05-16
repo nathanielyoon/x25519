@@ -1,10 +1,15 @@
 {
   "$schema": "http://json.schemastore.org/tsconfig",
+  "include": ["./src/*"],
   "compilerOptions": {
     "module": "esnext",
     "target": "esnext",
-    "lib": ["esnext"],
+    "lib": ["esnext", "dom"],
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
     "strict": true,
-    "exactOptionalPropertyTypes": true
+    "exactOptionalPropertyTypes": true,
+    "outDir": "./dist",
+    "declaration": true
   }
 }

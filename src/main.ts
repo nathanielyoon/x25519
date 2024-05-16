@@ -29,5 +29,5 @@ export const x25519 = (key_1: Uint8Array, key_2?: Uint8Array) => {
   if (key_2) a.set(key_2.subarray(0, 32)), b = i(a);
   a.set(key_1.subarray(0, 32)), b = l(i(a), b ?? 9n);
   do c |= a[z] = Number(b & 255n); while (b >>= 8n, ++z < 32);
-  return a;
+  return c && a;
 };
