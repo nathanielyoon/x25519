@@ -2,7 +2,6 @@
   "$schema": "https://raw.githubusercontent.com/denoland/deno/refs/heads/main/cli/schemas/config-file.v1.json",
   "name": "@nyoon/x25519",
   "version": "1.0.0",
-  "description": "Exchange keys over curve25519 ([RFC 7748](https://rfc-editor.org/rfc/rfc7748)).",
   "exports": "./mod.ts",
   "lint": {
     "rules": {
