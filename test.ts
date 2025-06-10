@@ -40,12 +40,10 @@ Deno.test("wycheproof", () =>
   fetch(
     "https://raw.githubusercontent.com/C2SP/wycheproof/9c081e6132063024c84aa6154649deee71e286f5/testvectors_v1/x25519_test.json",
   ).then(($) => $.text()).then(($) =>
-    JSON.parse($).testGroups[0].tests.forEach(
-      ($: { [_ in "private" | "public" | "shared"]: string }) => {
-        assertEquals(
-          x25519(hex($.private), hex($.public)),
-          $.shared === "0".repeat(64) ? null : hex($.shared),
-        );
-      },
-    )
+    JSON.parse($).testGroups[0].tests.forEach(($: Record<string, string>) => {
+      assertEquals(
+        x25519(hex($.private), hex($.public)),
+        $.shared === "0".repeat(64) ? null : hex($.shared),
+      );
+    })
   ));
