@@ -1,4 +1,4 @@
-import { hex } from "jsr:@nyoon/base@^1.0.7/16";
+import { hex } from "jsr:@nyoon/base@^2.0.0";
 import { assertEquals } from "jsr:@std/assert@^1.0.13";
 import { generate, x25519 } from "./mod.ts";
 
@@ -33,11 +33,12 @@ Deno.test("rfc", () =>
 Deno.test("wycheproof", () =>
   fetch(
     "https://raw.githubusercontent.com/C2SP/wycheproof/9c081e6132063024c84aa6154649deee71e286f5/testvectors_v1/x25519_test.json",
-  ).then(($) => $.text()).then(($) =>
-    JSON.parse($).testGroups[0].tests.forEach(($: Record<string, string>) =>
-      assertEquals(
-        x25519(hex($.private), hex($.public)),
-        $.shared === "0".repeat(64) ? null : hex($.shared),
+  ).then<{ testGroups: { tests: Record<string, string>[] }[] }>(($) => $.json())
+    .then(($) =>
+      $.testGroups[0].tests.forEach(($: Record<string, string>) =>
+        assertEquals(
+          x25519(hex($.private), hex($.public)),
+          $.shared === "0".repeat(64) ? null : hex($.shared),
+        )
       )
-    )
-  ));
+    ));
