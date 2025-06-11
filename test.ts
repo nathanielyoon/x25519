@@ -1,5 +1,5 @@
-import { hex } from "@nyoon/base/16";
-import { assertEquals } from "@std/assert";
+import { hex } from "jsr:@nyoon/base@^1.0.4/16";
+import { assertEquals } from "jsr:@std/assert@^1.0.13";
 import { generate, x25519 } from "./mod.ts";
 
 Deno.test("rfc", () =>
