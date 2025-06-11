@@ -1,4 +1,4 @@
-import { hex } from "jsr:@nyoon/base@^1.0.5/16";
+import { hex } from "jsr:@nyoon/base@^1.0.7/16";
 import { assertEquals } from "jsr:@std/assert@^1.0.13";
 import { generate, x25519 } from "./mod.ts";
 
