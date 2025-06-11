@@ -4,7 +4,7 @@ Exchange keys over curve25519 ([RFC 7748](https://rfc-editor.org/rfc/rfc7748)).
 
 ```ts
 import { generate, x25519 } from "@nyoon/x25519";
-import { assertEquals } from "@std/assert";
+import { assertEquals } from "@std/assert@^1.0.13";
 
 const key_1 = crypto.getRandomValues(new Uint8Array(32));
 const key_2 = crypto.getRandomValues(new Uint8Array(32));
